@@ -30,7 +30,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         var token = this.recoverToken(request);
-        var login = tokenService.validateToken(token);
+        var login = tokenService.getUserTypeFromToken(token);
 
         if (login != null) {
             String userType = this.tokenService.getUserTypeFromToken(token);
