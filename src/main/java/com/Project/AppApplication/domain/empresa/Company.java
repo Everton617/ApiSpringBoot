@@ -18,6 +18,7 @@ public class Company implements LoginUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
+    @Column(nullable = false, unique = true)
     private String email;
 
     public String getRole() {

@@ -22,6 +22,7 @@ public class Candidato implements LoginUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
+    @Column(nullable = false, unique = true)
     private String email;
     private String password;
     private String telefone;
